@@ -21,7 +21,7 @@
   |--:|--|--|--|
   |1|Bùi Anh Quốc |20215634|Khởi tạo kết nối, truyền thông tin giữa các UART, thiết lập baudrate|
   |2|Nguyễn Minh Sơn |20215637|Thiết kế mạch, lắp mạch, lưu trữ dữ liệu ra flash và load dữ liệu từ flash|
-  |3|Bùi Quang Dũng |20215555|Hiển thị thông tin giám sát lên màn hình, làm báo cáo|
+  |3|Bùi Quang Dũng |20215541|Hiển thị thông tin giám sát lên màn hình, làm báo cáo|
 
 ## MÔI TRƯỜNG HOẠT ĐỘNG
 
