@@ -6,7 +6,7 @@
 
  - Mô tả lại tính năng, đề bài được yêu cầu.
  - Ảnh chụp minh họa:\
-   ![Ảnh minh họa](https://firebasestorage.googleapis.com/v0/b/eduworld-6ba8b.firebasestorage.app/o/henhung%2Fhechim.heic?alt=media&token=23f9e2e4-c0f9-4ab4-bb37-0a9621662112)
+   ![Ảnh minh họa](https://husteduvn-my.sharepoint.com/:i:/g/personal/quoc_ba215634_sis_hust_edu_vn/EZx9eEk1YYRCktcwbFamcoIB5L_6kAUbIyLKjxp17f2EOQ?e=Vid8BY)
 
 ## TÁC GIẢ
 
