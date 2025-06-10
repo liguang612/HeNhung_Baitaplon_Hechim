@@ -6,7 +6,7 @@
 
  - Mô tả lại tính năng, đề bài được yêu cầu.
  - Ảnh chụp minh họa:\
-   ![Ảnh minh họa](https://husteduvn-my.sharepoint.com/:i:/g/personal/quoc_ba215634_sis_hust_edu_vn/EZx9eEk1YYRCktcwbFamcoIB5L_6kAUbIyLKjxp17f2EOQ?e=Vid8BY)
+   ![Ảnh minh họa](https://github.com/user-attachments/assets/50d8105f-984c-429c-a4ef-db2979660956)
 
 ## TÁC GIẢ
 
