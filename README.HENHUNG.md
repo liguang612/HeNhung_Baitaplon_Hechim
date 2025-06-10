@@ -16,6 +16,7 @@
 
 - Tên nhóm: Hệ chìm
 - Thành viên trong nhóm
+
   |STT|Họ tên|MSSV|Công việc|
   |--:|--|--|--|
   |1|Bùi Anh Quốc |20215634|Khởi tạo kết nối, truyền thông tin giữa các UART, thiết lập baudrate|
@@ -24,13 +25,13 @@
 
 ## MÔI TRƯỜNG HOẠT ĐỘNG
 
-- STM32F429-DISC1.
+- STM32F429I-DISC1.
 - Module: USSB2Serial.
 
-## SO ĐỒ SCHEMATIC
+## SƠ ĐỒ SCHEMATIC
 
-_Cho biết cách nối dây, kết nối giữa các linh kiện_ 
-Ví dụ có thể liệt kê dạng bảng
+_Cho biết cách nối dây, kết nối giữa các linh kiện_
+
 |STM32F429|Module ngoại vi|Chân ngoại vi|
 |--|--|--|
 |Cổng debug|UART_H| |
@@ -43,8 +44,16 @@ Ví dụ có thể liệt kê dạng bảng
 
 ### TÍCH HỢP HỆ THỐNG
 
-- Mô tả các thành phần phần cứng và vai trò của chúng: máy chủ, máy trạm, thiết bị IoT, MQTT Server, module cảm biến IoT...
-- Mô tả các thành phần phần mềm và vai trò của chúng, vị trí nằm trên phần cứng nào: Front-end, Back-end, Worker, Middleware...
+#### Phần cứng
+
+- Laptop/PC: Môi trường chạy phần mềm nạp code và hiển thị thông tin. Thiết bị giám sát, giao tiếp với UART_H
+- STM32F429I-DISC1: UART_H, là trung gian truyền nhận thông tin giữa các UART, nhận lệnh từ thiết bị giám sát để thiết lập baud rate cho UART_A và UART_B. Cung cấp chân ngoại vi hỗ trợ kết nối UART
+- Module USB2Serial: Đóng vai trò như UART_A và UART_B, sử dụng các chân ngoại vi của bộ kit STM32
+
+#### Phần mềm
+
+- STM32CubeIDE: Môi trường lập trình bộ kit STM32
+- Hercules: Phần mềm hiển thị thông tin truyền nhận từ các UART
 
 ### ĐẶC TẢ HÀM
 
@@ -52,15 +61,59 @@ Ví dụ có thể liệt kê dạng bảng
 
   ```C
      /**
-      *  Hàm tính ...
-      *  @param  x  Tham số
-      *  @param  y  Tham số
-      */
-     void abc(int x, int y = 2);
+      * Chuyển xâu về số. Hàm này chủ yếu dùng để lấy baudrate trong lệnh người dùng.
+      *   @param str : xâu chứa số  
+      *   Xâu chứa số hợp lệ: trả ra sô
+      * 	Xâu không hợp lệ: return -1
+      **/
+      int extractNumber(char* str)
   ```
-  
+  ```C
+     /**
+      * Kiểm tra xem phần tử có nằm trong mảng không?  Hàm này chủ yếu dùng để kiểm tra số baudrate người dùng nhập có nằm trong danh sách hợp lệ không.
+      *   @param mem : số cần tìm 
+      *   @param arr : con trỏ mảng
+      *   @param len : độ dài mảng
+      **/
+      bool includes(int* arr, int mem, int len)
+  ```
+  ```C
+     /**
+      * Chuyển xâu người dùng nhập về dạng lệnh và baudrate.
+      *   @param cmd : Xâu chứa lệnh người dùng nhập vào
+      *   @struct command : chứa loại lệnh và thông tin đi kèm (số baudrate)
+      **/
+      command extractCommand(char* cmd)
+  ```
+  ```C
+     /**
+      * Tính toán checksum dựa trên config
+      *   @param config : Chứa config baudrate
+      *   @struct UART_BaudRates_Config : chứa thông tin config (baudrate của UART_A, UART_B, số kiểm tra, checksum)
+      **/
+      uint32_t Calculate_Checksum(UART_BaudRates_Config* config)
+  ```
+  ```C
+     /**
+      * Lưu config vào bộ nhớ flash.
+      *   @param config_to_save : Chứa config baudrate cần lưu
+      **/
+      void Save_Config_To_Flash(UART_BaudRates_Config* config_to_save)
+  ```
+  ```C
+     /**
+      * Lấy dữ liệu từ bộ nhớ flash.
+      **/
+      void Load_Config_From_Flash(void)
+  ```
+  ```C
+     /**
+      * Override việc xử lý ngắt được gây ra bởi DMA liên quan đến việc nhận dữ liệu từ các cổng UART (gửi bằng Hercules trên PC).
+      **/
+      void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef* huart, uint16_t Size)
+  ```
+
 ### KẾT QUẢ
 
 - Video minh họa:
-![Video minh họa](https://github.com/Smo1003/Draft/releases/download/v1.0.0/Hechim.mp4)
-
+[![thumbnail](https://github.com/user-attachments/assets/0ac268a0-327d-4bbe-a3e8-fe414d70c5c6)](https://youtu.be/2pdPq1v_i2c)
