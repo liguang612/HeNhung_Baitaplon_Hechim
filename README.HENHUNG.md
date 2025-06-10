@@ -6,7 +6,7 @@
 
  - Mô tả lại tính năng, đề bài được yêu cầu.
  - Ảnh chụp minh họa:\
-   ![Ảnh minh họa](https://soict.hust.edu.vn/wp-content/uploads/logo-soict-hust-1-1024x416.png)
+   ![Ảnh minh họa](https://www.dropbox.com/scl/fi/5tg27j54o377t9qjn9n5i/hechim.heic?rlkey=ejpgs99h6xnvwptlfip6oywmp&st=cyvvfsas&dl=0)
 
 ## TÁC GIẢ
 
