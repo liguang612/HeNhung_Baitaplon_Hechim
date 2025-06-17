@@ -42,6 +42,8 @@ _Cho biết cách nối dây, kết nối giữa các linh kiện_
 |PC6|UART_B|RX|
 |GND|UART_B|GND|
 
+
+
 ### TÍCH HỢP HỆ THỐNG
 
 #### Phần cứng
@@ -117,3 +119,9 @@ _Cho biết cách nối dây, kết nối giữa các linh kiện_
 
 - Video minh họa:
 [![thumbnail](https://github.com/user-attachments/assets/0ac268a0-327d-4bbe-a3e8-fe414d70c5c6)](https://youtu.be/2pdPq1v_i2c)
+
+### PHÁT SINH
+
+- UART_H là cổng PA9, PA10 nhưng ban đầu nhầm lẫn là khác với cổng debug
+- USART2 không hoạt động nên phải chuyển qua USART_6. Kiểm tra kết nối bằng cách dùng HAL_UART_Transmit để thử
+- Chưa thử nghiệm thay đổi vai trò của UART và USART. Chương trình hiện tại chỉ hoạt động với USART
